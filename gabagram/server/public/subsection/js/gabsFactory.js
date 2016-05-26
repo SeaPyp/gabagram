@@ -1,10 +1,14 @@
+(function() {
+  'use strict';
+
+
 angular.module('gabagramApp')
   .factory('GabsFactory', GabsFactory);
 
 GabsFactory.$inject = ['$http'];
 
 function GabsFactory($http){
-  var gabsUrl = 'http://localhost:3000/';
+  var gabsUrl = '/api/gabs';
   var gabsFactory = {};
 
   gabsFactory.getAllGabs = function(){
@@ -25,3 +29,5 @@ function GabsFactory($http){
 
   return gabsFactory;
 }
+
+})();

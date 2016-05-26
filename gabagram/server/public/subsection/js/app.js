@@ -2,10 +2,10 @@
   'use strict';
 
   angular
-    .module('myApp', [
-      'myApp.subsection',
-      'myApp.map',
-      'ui.router'
+    .module('gabagramApp', [
+      'ui.router',
+      // 'GabsController',
+      // 'GabsFactory'
     ])
     .config(config);
 
@@ -18,21 +18,7 @@
       .state('gabs', {
         url: '/gabs',
         templateUrl: 'subsection/partials/gabs.html',
-        controller: 'SubsectionController as ctrl'
-      });
-
-      $stateProvider
-      .state('user', {
-        url: '/users',
-        templateUrl: 'subsection/partials/users.html',
-        controller: 'SubsectionController as ctrl'
-      });
-
-      $stateProvider
-      .state('map', {
-        url: '/map',
-        templateUrl: 'map/partials/map.html',
-        controller: 'MapController as ctrl'
+        controller: 'GabsController as ctrl'
       });
 
   }

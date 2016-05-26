@@ -14,6 +14,9 @@ controller.create = function(req, res){
   gab.title = req.body.title;
   gab.gab_body = req.body.gab_body;
   // gab.recipient = //add user id here again (user.findBy.userName)
+  gab.isCollected = false;
+  gab.createdAt = new Date();
+  gab.updatedAt = gab.createdAt;
   gab.save(function(err){
     if(err) throw err
     res.json({success: true, message: 'Gab Created'})
@@ -26,6 +29,10 @@ controller.update = function(req, res){
     gab.title = req.body.title;
     gab.gab_body = req.body.gab_body;
     // gab.recipient = //add user id here again
+    if(req.body.completed){
+      gab.isComplete = true;
+      gab.completedOn = new Date();
+  }
     gab.save(function(err){
       if(err) res.json(err);
       res.json(gab);

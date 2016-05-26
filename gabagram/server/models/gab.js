@@ -6,7 +6,11 @@ var gabSchema = new Schema({
   title    : String,
   gab_body : String,
   comments :[{content: 'string'}],
-  recipient : { type: String, ref: 'User' }
+  recipient : { type: String, ref: 'User' },
+  isCollected: Boolean,
+  createdAt: Date,
+  updatedAt: Date,
+  collectedOn: Date
 });
 
 var Gab  = mongoose.model('Gab', gabSchema);

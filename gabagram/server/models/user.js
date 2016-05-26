@@ -9,13 +9,13 @@ var userSchema = new Schema({
   gabs : [{ type: Schema.Types.ObjectId, ref: 'Gab' }]
 });
 
-// userSchema.methods.validatePassword = function(pwd) {
-//   return bcrypt.compareSync(password, this.local.password);
-// };
+userSchema.methods.validatePassword = function(pwd) {
+  return bcrypt.compareSync(password, this.local.password);
+};
 
-// userSchema.methods.encrypt = function(pwd) {
-//   return bcrypt.hashSync(pwd, 8);
-// };
+userSchema.methods.encrypt = function(pwd) {
+  return bcrypt.hashSync(pwd, 8);
+};
 
 var User = mongoose.model('User', userSchema);
 
